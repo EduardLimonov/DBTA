@@ -1,0 +1,28 @@
+QPushButton { font: 16px; }
+QLabel, QComboBox { font: 16px; }
+QLabel#name { font: 20px; }
+QLineEdit { font: 16px; }
+QFrame { padding: 0px; margin: 0px; }
+QPushButton#close { border-image: url(resource/close-inact.png); }
+QPushButton#close:hover { border-image: url(resource/close.png); }
+
+QFrame#fram { background-color: white; border-radius: 3px; border: 1px solid blue; margin: 0px; padding: 0px; }
+
+QPushButton#evilButton {
+    background-color: white;
+    border-style: outset;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
+    font: bold 20px;
+    min-width: 10em;
+    padding: 6px;
+}
+QPushButton#evilButton:pressed {
+    background-color: rgb(224, 0, 0);
+    border-style: inset;
+}
+QHBoxLayout {
+    padding: 2px;
+    margin: 2px;
+}
