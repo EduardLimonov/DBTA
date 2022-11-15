@@ -1,42 +1,4 @@
 {
-    "filter": {
-        "Localhost_moy_localhost.chessbase._round": [
-            "Localhost_moy_localhost.chessbase._round.id_round|Localhost_moy_localhost.chessbase._round.id_round|="
-        ],
-        "loc1.chessbase.competition$$$$##$$$$Localhost_moy_localhost.chessbase._round": [
-            "Localhost_moy_localhost.chessbase._round.id_round|Localhost_moy_localhost.chessbase._round.id_round|=",
-            "Localhost_moy_localhost.chessbase._round._number|Localhost_moy_localhost.chessbase._round.id_round|="
-        ],
-        "Localhost_moy_localhost.chessbase._round$$$$##$$$$loc1.chessbase.competition": [],
-        "Localhost_moy_localhost.chessbase._round$$$$##$$$$test.metadata._attribute": [
-            "test.metadata._attribute._id|test.metadata._attribute._id|="
-        ],
-        "Localhost_moy_localhost.chessbase.chessplayer": [
-            "Localhost_moy_localhost.chessbase.chessplayer.first_name|'\u041b\u0435\u043e\u043d\u0438\u0434'|=",
-            "Localhost_moy_localhost.chessbase.chessplayer.pathronymic|'\u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u0438\u0447'|="
-        ]
-    },
-    "sort": {
-        "Localhost_moy_localhost.chessbase._round": [
-            "Localhost_moy_localhost.chessbase._round.id_round|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e"
-        ],
-        "loc1.chessbase.competition$$$$##$$$$Localhost_moy_localhost.chessbase._round": [
-            "Localhost_moy_localhost.chessbase._round.id_round|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e",
-            "loc1.chessbase.competition.FIDE_category|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e",
-            "Localhost_moy_localhost.chessbase._round.id_round|\u043f\u043e \u0432\u043e\u0437\u0440\u0430\u0441\u0442\u0430\u043d\u0438\u044e",
-            "loc1.chessbase.competition.number_of_rounds|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e"
-        ],
-        "Localhost_moy_localhost.chessbase._round$$$$##$$$$loc1.chessbase.competition": [
-            "Localhost_moy_localhost.chessbase._round.id_round|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e",
-            "loc1.chessbase.competition.FIDE_category|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e",
-            "Localhost_moy_localhost.chessbase._round.id_round|\u043f\u043e \u0432\u043e\u0437\u0440\u0430\u0441\u0442\u0430\u043d\u0438\u044e",
-            "loc1.chessbase.competition.number_of_rounds|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e"
-        ],
-        "Localhost_moy_localhost.chessbase._round$$$$##$$$$test.metadata._attribute": [
-            "Localhost_moy_localhost.chessbase._round.id_round|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e"
-        ],
-        "Localhost_moy_localhost.chessbase.chessplayer": [
-            "Localhost_moy_localhost.chessbase.chessplayer.second_name|\u043f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e"
-        ]
-    }
+    "filter": {},
+    "sort": {}
 }

@@ -5,6 +5,7 @@ from core.utils.references import ServerRef
 
 Query = str
 
+
 sql_get_servers = 'SELECT * FROM %s' % MDServer.tname
 sql_last_inserted_id = 'SELECT LAST_INSERT_ID()'
 sql_show_dbs = 'SHOW DATABASES'
@@ -68,3 +69,44 @@ def record_to_server(record: tuple[str, ...]) -> MDServer:
 
 def sql_use_database(db_name: str) -> Query:
     return 'USE %s' % db_name
+
+
+def sql_create_metadata(db_name: str) -> Query:
+    return """CREATE DATABASE %s;
+
+USE %s;
+
+CREATE TABLE _Server (
+	_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    _address CHAR(16),
+    _user CHAR(32),
+    _passwd TEXT,
+    _name CHAR(24) UNIQUE,
+    _port CHAR(6)
+);
+
+CREATE TABLE _DB (
+	_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    _id_parent INTEGER,
+    _name CHAR(64),
+
+    FOREIGN KEY (_id_parent) REFERENCES _Server (_id) ON DELETE CASCADE
+);
+
+CREATE TABLE _Table (
+	_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    _id_parent INTEGER,
+    _name CHAR(64),
+
+    FOREIGN KEY (_id_parent) REFERENCES _DB (_id) ON DELETE CASCADE
+);
+
+CREATE TABLE _Attribute (
+	_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    _id_parent INTEGER,
+    _name CHAR(64),
+
+    FOREIGN KEY (_id_parent) REFERENCES _Table (_id) ON DELETE CASCADE
+);""" % (db_name, db_name)
+
+

@@ -98,7 +98,6 @@ class StartForm(QWidget):
         check.clicked.connect(lambda e, self=self: self.check_servers(True))
         add.clicked.connect(lambda e, self=self: self.master.add_server())
         query.clicked.connect(lambda e, self=self: self.make_query())
-        #self.btns = [add, query]
 
         return res
 
@@ -114,6 +113,8 @@ class StartForm(QWidget):
         errors = []
         self.available_servers = []
         for r in self.records:
+            if not (type(r) == RecordWidget):
+                continue
             ref = r.server_ref
             try:
                 ServerManager(ref)

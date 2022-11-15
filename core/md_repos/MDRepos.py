@@ -9,6 +9,7 @@ from core.utils.schema.DBSchema import Node
 from core.utils.schema.SchemaBuilder import SchemaBuilder
 from typing import *
 from mysql.connector import MySQLConnection
+import mysql.connector
 from core.md_extractor.MDExtractor import MDExtractor
 from PyQt5.QtWidgets import *
 
@@ -24,8 +25,17 @@ class MDRepos:
 
     def __init__(self, path: Optional = None):
         self.db_repos = MDReposLoader.read_configs(path)
-        self.server_manager = ServerManager(self.db_repos.serverRef, database=self.db_repos.dbname)
+        try:
+            self.server_manager = ServerManager(self.db_repos.serverRef, database=self.db_repos.dbname)
+        except mysql.connector.errors.ProgrammingError:
+            self.__create_db()
+            self.server_manager = ServerManager(self.db_repos.serverRef, database=self.db_repos.dbname)
+
         self.__check_repos_connection()
+
+    def __create_db(self) -> None:
+        server_manager = ServerManager(self.db_repos.serverRef)
+        server_manager.make_select(q.sql_create_metadata(self.db_repos.dbname))
 
     def __check_repos_connection(self) -> None:
         self.connection = self.server_manager.get_connection()

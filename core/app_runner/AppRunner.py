@@ -71,6 +71,7 @@ class AppRunner(QObject):
                     #q.wait()
 
                 except mysql.connector.errors.DatabaseError:
+                    commutator.make_ts = False
                     QMessageBox.about(self.dialog, "Ошибка",
                                       "Не удается подключиться к серверу")
                     self.repos.remove_server(new_server)
